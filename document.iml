@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.1.0-M1" level="project" />
+    <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.1.0-M1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-all:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-bean:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-core:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-db:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-decora:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-htmlstapler:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-http:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-json:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-jtx:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-lagarto:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-log:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-madvoc:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-mail:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.mail:javax.mail-api:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-petite:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-props:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-proxetta:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-servlet:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-upload:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jodd:jodd-vtor:3.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi-ooxml:3.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi:3.17" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-collections4:4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi-ooxml-schemas:3.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.xmlbeans:xmlbeans:2.6.0" level="project" />
+    <orderEntry type="library" name="Maven: stax:stax-api:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.virtuald:curvesapi:1.04" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.poi:poi-scratchpad:3.17" level="project" />
+  </component>
+</module>
