@@ -1,9 +1,12 @@
 package model01;
 
 import model03.Main3;
+import org.apache.poi.POIXMLDocumentPart;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.apache.poi.xwpf.usermodel.XWPFTable;
+import org.apache.xmlbeans.XmlCursor;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -15,7 +18,7 @@ import java.util.Map;
 
 public class Main1 {
 
-    public static final String PAK_PATH = "D:\\文档内容批量处理程序\\";
+    public static final String PAK_PATH = "E:\\文档内容批量处理程序\\";
     //第一步替换查找的内容
     public static final String REGEX = "1. A";
     //附件一的文档文件夹系统路径
@@ -29,8 +32,8 @@ public class Main1 {
     //替换内容
     public static final String REPLACEEXCEL = PAK_PATH + "4-替换内容.xlsx";
     //替换文本A
-    public static final String REPLACE_TEXT_A = " <C>frame<C> ";
-    public static final String REPLACE_TEXT_B = "<J>Steel building<J>";
+    public static final String REPLACE_TEXT_A = " CCC ";
+    public static final String REPLACE_TEXT_B = " JJJ ";
 
 
     public static void main(String[] args) {
@@ -43,7 +46,6 @@ public class Main1 {
                 } else System.err.println("第三步执行失败");
             } else System.err.println("第二步执行失败");
         } else System.err.println("第一步执行失败");
-
     }
 
     public static boolean one() {
@@ -69,46 +71,39 @@ public class Main1 {
         }
         //读取附件3需要替换的内容
         Path path3 = Paths.get(WORD3);
-        Map<String, XWPFDocument> docxmap = new HashMap<>();
-        try {
-            docxmap = ReadWord.readDocxs(path3);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         //替换 生成新的文档
-        final int[] i = {1};
         Map<String, List<String>> finalMap1 = map1;
-        Map<String, XWPFDocument> finalDocxmap = docxmap;
-        guanxilist.forEach(s -> {
+        for (int k = 0; k < guanxilist.size(); k++) {
             //获取附件1的对应的内容
-            List<String> doc_1 = finalMap1.get(i[0] + ".doc");
-            XWPFDocument docx_3 = finalDocxmap.get(Util.docxname(s) + ".docx");
+            List<String> doc_1 = finalMap1.get((k + 1) + ".doc");
             try {
+            XWPFDocument docx_3 =  ReadWord.readDocx(Paths.get(WORD3 +"\\"+ Util.docxname(guanxilist.get(k)) + ".docx"));
+            XWPFDocument doc_2 =  docx_3.getXWPFDocument();
                 //判断第一条是不是 要替换的内容
                 if (doc_1.get(0).equals(Main1.REGEX)) {
-                    //如果是则替换
-                    final boolean[] first = {true};
-                    doc_1.forEach(s1 -> {
-                        if (first[0]) {
-                            first[0] = false;
-                        } else {
-                            XWPFParagraph para = docx_3.createParagraph();
-                            XWPFRun run = para.createRun();
-                            run.setText(s1);
+                    XWPFRun run = doc_2.getParagraphs().get(0).getRuns().get(0);
+                    run.setText("1. " + run.getText(0), 0);
+                    //先添加1的内容
+                    for (int p = 0; p < doc_1.size(); p++) {
+                        if (p != 0) {
+                            XWPFParagraph newpar = doc_2.createParagraph();
+                            XWPFRun run1 = newpar.createRun();
+                            run1.setText(doc_1.get(p));
                         }
-                    });
+                    }
                 }
-                Path p = Paths.get(OUT + "\\" + i[0] + ".docx");
+                Path p = Paths.get(OUT + "\\" + (k + 1) + ".docx");
                 Path file = Files.createFile(p);
                 FileOutputStream os = new FileOutputStream(file.toFile());
-                docx_3.write(os);
+                doc_2.write(os);
                 os.close();
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            i[0]++;
-//            System.out.println(+ "" + s);
-        });
+        }
         return true;
     }
 

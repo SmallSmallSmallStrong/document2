@@ -138,7 +138,6 @@ public class ReadWord {
                     System.err.println(p.getFileName());
                     e.printStackTrace();
                 }
-
             });
         } catch (IOException e) {
             System.out.println("获取paths，文件列表失败");
@@ -160,6 +159,13 @@ public class ReadWord {
         List<XWPFParagraph> ps = docx.getParagraphs();
         ps.forEach(paragraph -> {
             List<XWPFRun> runs = paragraph.getRuns();
+//            String str = paragraph.getText();
+//            if (str != null && str.contains(text)) {
+//                str = str.replaceAll(text, repalce);
+//                System.out.println(str);
+//                System.out.println(str);
+//                System.out.println(paragraph.getText());
+//            }
             runs.forEach(xwpfRun -> {
                 String str = xwpfRun.getText(0);
                 if (str != null && str.contains(text)) {
@@ -167,6 +173,7 @@ public class ReadWord {
                     xwpfRun.setText(str, 0);
                 }
             });
+
         });
         for (XWPFTable tbl : docx.getTables()) {
             for (XWPFTableRow row : tbl.getRows()) {

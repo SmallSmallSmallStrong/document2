@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Main3 {
-    public static String REGEX = "^\\d+[.][\\s\\w\\W]+:\\s*$";
+    public static String REGEX = "^\\d+[.][\\s\\w\\W]+:$";
+    //\s*
 //    public static void main(String[] args) throws IOException {
 //        Map<String, XWPFDocument> list = ReadWord.readDocxs(Paths.get(Main1.OUT));
 //        list.forEach((s, xwpfDocument) -> {
