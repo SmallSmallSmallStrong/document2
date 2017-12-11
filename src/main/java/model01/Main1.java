@@ -70,15 +70,14 @@ public class Main1 {
             return false;
         }
         //读取附件3需要替换的内容
-        Path path3 = Paths.get(WORD3);
         //替换 生成新的文档
         Map<String, List<String>> finalMap1 = map1;
         for (int k = 0; k < guanxilist.size(); k++) {
             //获取附件1的对应的内容
             List<String> doc_1 = finalMap1.get((k + 1) + ".doc");
             try {
-            XWPFDocument docx_3 =  ReadWord.readDocx(Paths.get(WORD3 +"\\"+ Util.docxname(guanxilist.get(k)) + ".docx"));
-            XWPFDocument doc_2 =  docx_3.getXWPFDocument();
+                XWPFDocument docx_3 = ReadWord.readDocx(Paths.get(WORD3 + "\\" + Util.docxname(guanxilist.get(k)) + ".docx"));
+                XWPFDocument doc_2 = docx_3.getXWPFDocument();
                 //判断第一条是不是 要替换的内容
                 if (doc_1.get(0).equals(Main1.REGEX)) {
                     XWPFRun run = doc_2.getParagraphs().get(0).getRuns().get(0);
@@ -97,7 +96,6 @@ public class Main1 {
                 FileOutputStream os = new FileOutputStream(file.toFile());
                 doc_2.write(os);
                 os.close();
-
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
