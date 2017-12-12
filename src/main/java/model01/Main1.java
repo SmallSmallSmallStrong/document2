@@ -1,16 +1,16 @@
 package model01;
 
 import model03.Main3;
-import org.apache.poi.POIXMLDocumentPart;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
-import org.apache.poi.xwpf.usermodel.XWPFTable;
-import org.apache.xmlbeans.XmlCursor;
 
-import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.file.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,8 +32,8 @@ public class Main1 {
     //替换内容
     public static final String REPLACEEXCEL = PAK_PATH + "4-替换内容.xlsx";
     //替换文本A
-    public static final String REPLACE_TEXT_A = " CCC ";
-    public static final String REPLACE_TEXT_B = " JJJ ";
+    public static final String REPLACE_TEXT_A = "CCC";
+    public static final String REPLACE_TEXT_B = "JJJ";
 
 
     public static void main(String[] args) {
